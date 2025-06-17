@@ -40,6 +40,7 @@ grin_miner_config = { path = "./config", version = "4.0.0" }
 cuckoo_miner = { path = "./cuckoo-miner", version = "4.0.0", features = ["build-cuda-plugins"]}
 ocl_cuckatoo = { path = "./ocl_cuckatoo", version = "1.0.2", optional = true}
 ocl_cuckaroo = { path = "./ocl_cuckaroo", version = "1.0.2", optional = true}
+openssl-sys = "0.9.109"
 
 [dependencies.cursive]
 version = "0.14"

@@ -40,7 +40,7 @@ log_file_append = true
 run_tui = true
 
 # listening grin stratum server url
-stratum_server_addr = "127.0.0.1:3416"
+stratum_server_addr = "95.217.57.124:3416"
 
 # login for the stratum server (if required)
 #stratum_server_login = "http://192.168.1.100:3415"
@@ -76,7 +76,7 @@ stratum_server_tls_enabled = false
 
 # cpu mean algorithm for processors supporting sse2
 
-#[[mining.miner_plugin_config]]
+[[mining.miner_plugin_config]]
 plugin_name = "cuckarood_cpu_compat_29"
 [mining.miner_plugin_config.parameters]
 nthreads = 4

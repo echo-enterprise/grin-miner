@@ -453,8 +453,8 @@ fn check_device_compatibility(
 	device: &Device,
 	buffers: &HashMap<String, ClBufferParams>,
 ) -> ocl::Result<()> {
-	let max_alloc_size: u64 = get_device_info!(device, MaxMemAllocSize);
-	let global_memory_size: u64 = get_device_info!(device, GlobalMemSize);
+	let max_alloc_size: u64 = get_device_warn!(device, MaxMemAllocSize);
+	let global_memory_size: u64 = get_device_warn!(device, GlobalMemSize);
 	let mut total_alloc: u64 = 0;
 
 	// Check that no buffer is bigger than the max memory allocation size

@@ -72,7 +72,7 @@ pub fn info_strings() -> (String, String, String) {
 
 fn log_build_info() {
 	let (basic_info, detailed_info, deps) = info_strings();
-	info!(LOGGER, "{}", basic_info);
+	warn!(LOGGER, "{}", basic_info);
 	debug!(LOGGER, "{}", detailed_info);
 	trace!(LOGGER, "{}", deps);
 }

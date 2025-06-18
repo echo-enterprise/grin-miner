@@ -362,7 +362,7 @@ impl Controller {
 				None => Err(Error::RequestError("No params in job request".to_owned())),
 				Some(params) => {
 					let job = serde_json::from_value::<types::JobTemplate>(params)?;
-					info!(LOGGER, "Got a new job: {:?}", job);
+					warn!(LOGGER, "Got a new job: {:?}", job);
 					self.send_miner_job(job)
 				}
 			},
@@ -377,7 +377,7 @@ impl Controller {
 			"status" => {
 				if let Some(result) = res.result {
 					let st = serde_json::from_value::<types::WorkerStatus>(result)?;
-					info!(
+					warn!(
 						LOGGER,
 						"Status for worker {} - Height: {}, Difficulty: {}, ({}/{}/{})",
 						st.id,
@@ -413,7 +413,7 @@ impl Controller {
 							job.height, job.difficulty
 						);
 					}
-					info!(
+					warn!(
 						LOGGER,
 						"Got a job at height {} and difficulty {}", job.height, job.difficulty
 					);
@@ -432,14 +432,14 @@ impl Controller {
 			// "submit" response
 			"submit" => {
 				if let Some(result) = res.result {
-					info!(LOGGER, "Share Accepted!!");
+					warn!(LOGGER, "Share Accepted!!");
 					let mut stats = self.stats.write()?;
 					stats.client_stats.last_message_received =
 						"Last Message Received: Share Accepted!!".to_string();
 					stats.mining_stats.solution_stats.num_shares_accepted += 1;
 					let result = serde_json::to_string(&result)?;
 					if result.contains("blockfound") {
-						info!(LOGGER, "Block Found!!");
+						warn!(LOGGER, "Block Found!!");
 						stats.client_stats.last_message_received =
 							"Last Message Received: Block Found!!".to_string();
 						stats.mining_stats.solution_stats.num_blocks_found += 1;

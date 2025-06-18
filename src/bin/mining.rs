@@ -166,7 +166,7 @@ impl Controller {
 			}
 			i += 1;
 		}
-		info!(
+		warn!(
 			LOGGER,
 			"Mining: Cucka*oo* at {} gps (graphs per second)", sps_total
 		);

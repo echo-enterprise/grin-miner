@@ -71,7 +71,7 @@ fn main() {
 	let dst = Config::new("src/cuckoo_sys/plugins")
 		.define("BUILD_CUDA_PLUGINS", BUILD_CUDA_PLUGINS) //whatever flags go here
 		//.cflag("-foo") //and here
-		.build_target("cuckatoo_mean_cpu_compat_31")
+		.build_target("cuckaroo_cpu_compat_29")
 		.build();
 
 	println!("Plugin path: {:?}", plugin_path);

@@ -135,8 +135,13 @@ stratum_server_tls_enabled = false
 ###############################################################
 
 #mean cpu
+#[[mining.miner_plugin_config]]
+#plugin_name = "cuckatoo_mean_cpu_compat_31"
+#parameters = { nthreads = 4 }
+#nthreads = 4
+
 [[mining.miner_plugin_config]]
-plugin_name = "cuckatoo_mean_cpu_compat_31"
+plugin_name = "cuckaroo_cpu_compat_29"
 parameters = { nthreads = 4 }
 nthreads = 4
 

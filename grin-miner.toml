@@ -76,9 +76,9 @@ stratum_server_tls_enabled = false
 
 # cpu mean algorithm for processors supporting sse2
 
-[[mining.miner_plugin_config]]
-plugin_name = "cuckarood_cpu_compat_29"
-parameters = { nthreads = 4 }
+#[[mining.miner_plugin_config]]
+#plugin_name = "cuckarood_cpu_compat_29"
+#parameters = { nthreads = 4 }
 
 # As above, but for processors supporting avx2
 
@@ -135,10 +135,10 @@ parameters = { nthreads = 4 }
 ###############################################################
 
 #mean cpu
-#[[mining.miner_plugin_config]]
-#plugin_name = "cuckatoo_mean_cpu_compat_31"
-#[mining.miner_plugin_config.parameters]
-#nthreads = 4
+[[mining.miner_plugin_config]]
+plugin_name = "cuckatoo_mean_cpu_compat_31"
+parameters = { nthreads = 4 }
+nthreads = 4
 
 #mean cpu avx2
 #[[mining.miner_plugin_config]]
